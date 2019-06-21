@@ -49,9 +49,9 @@ class CreateController extends Controller
         $poll->question = $request->question;
         $poll->save();
 
-       foreach($request->option as $i){
-           $i->save();
-       }
+    //    foreach($request->option as $i){
+    //        $i->save();
+    //    }
 
         return redirect(action('HomeController@index'));
     }
