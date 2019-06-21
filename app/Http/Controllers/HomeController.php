@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $polls = \App\Poll::all();
+        $options = \App\Option::all();
+
+        return view('home', compact('polls', 'options'));
     }
 }

@@ -13,8 +13,22 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    
                     You are logged in!
+
+                    @foreach($polls as $poll)
+                    <div>{{ $poll->question }}
+                    {!! Form::open(['post' => 'VoteController@index']) !!}
+                        @foreach($options as $option)
+                            @if($poll->id == $option->poll_id)
+                                 <?= Form::submit($option->name) ?>
+                            @endif
+                        @endforeach
+                        {!! Form::close() !!}
+                        
+                    </div>
+                    <br>
+                    @endforeach
                 </div>
             </div>
         </div>
