@@ -29,6 +29,8 @@
                     </div>
                     <br>
                     @endforeach
+
+                    <a href="{{ action('CreateController@index') }}">Create new poll</a>
                 </div>
             </div>
         </div>

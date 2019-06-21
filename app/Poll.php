@@ -12,4 +12,9 @@ class Poll extends Model
     {
         return $this->hasMany('App\Option');
     }
+
+    public function user()
+    {
+        return $this->belongsto('App\User');
+    }
 }

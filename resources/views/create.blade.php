@@ -14,10 +14,6 @@
 {{ Form::text('option4') }}
 {{ Form::text('option5') }}
 
-@if
-
-
-@endif
 
 
 <br>

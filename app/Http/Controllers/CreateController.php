@@ -19,7 +19,10 @@ class CreateController extends Controller
         $poll = new Poll();
         $options = $poll->options;
         $poll->question = $request->question;
+        $poll->user_id = \Auth::user()->id;
         $poll->save();
+        $user = $poll->user;
+        $user->save();
 
         $poll->options()->saveMany([
             new \App\Option(['name' => $request->option1]),
