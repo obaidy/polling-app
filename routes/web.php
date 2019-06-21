@@ -22,3 +22,7 @@ Route::any('/home', 'HomeController@index')->name('home');
 Route::get('/create', 'CreateController@index');
 
 Route::post('/create', 'CreateController@store');
+
+Route::get('/edit/{id}', 'CreateController@edit');
+
+Route::post('/edit/{id})', 'CreateController@update');

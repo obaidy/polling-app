@@ -25,6 +25,11 @@
                             @endif
                         @endforeach
                         {!! Form::close() !!}
+                    @if(\Auth::user()->id == $poll->user_id)
+                    <a href="{{ action('CreateController@edit', $poll) }}">Edit</a>
+        
+                    @endif
+
                         
                     </div>
                     <br>

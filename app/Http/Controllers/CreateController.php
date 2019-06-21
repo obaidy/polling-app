@@ -35,4 +35,24 @@ class CreateController extends Controller
 
 
     }
+
+    public function edit(Request $request, $id)
+    {
+        $poll = Poll::find($id);
+        $options = $poll->options;
+        return view('edit', compact('poll', 'options'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $poll = Poll::find($id);
+        $poll->question = $request->question;
+        $poll->save();
+
+       foreach($request->option as $i){
+           $i->save();
+       }
+
+        return redirect(action('HomeController@index'));
+    }
 }
